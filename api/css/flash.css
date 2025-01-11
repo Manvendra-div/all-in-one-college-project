@@ -1,0 +1,64 @@
+/* Flash message container */
+.flash-message {
+    position: fixed;
+    top: 20px;
+    right: -100%; /* Start off-screen */
+    width: 30vw; /* 30% of viewport width */
+    max-width: 400px; /* Optional: Limit maximum width */
+    background-color: #28a745; /* Green background for success messages */
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    opacity: 0; /* Hidden by default */
+    transform: translateX(0);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    overflow: hidden; /* Ensure no overflow from children like the progress bar */
+}
+
+/* Progress bar at the bottom of the flash message */
+.flash-progress {
+    height: 5px;
+    width: 100%; /* Start full */
+    background-color: #ffdf00; /* Yellow progress bar */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 8px 8px;
+    animation: shrink-progress 5s linear forwards; /* Shrink over 5 seconds */
+}
+
+/* Animation for the progress bar */
+@keyframes shrink-progress {
+    100% {
+        width: 100%;
+    }
+    70% {
+        width: 70%;
+    }
+    50% {
+        width: 50%;
+    } 
+    30% {
+        width: 30%;
+    }
+    0% {
+        width: 0%;
+    }
+}
+
+/* Show the flash message */
+.flash-message.show {
+    right: 20px; /* Slide into view */
+    opacity: 1; /* Fully visible */
+}
+
+/* Hide the flash message */
+.flash-message.hide {
+    right: -100%; /* Slide out of view */
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+

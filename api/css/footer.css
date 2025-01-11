@@ -1,0 +1,25 @@
+/* Footer Styles */
+footer {
+    background-color: #0a2540; /* A rich dark blue color for contrast */
+    color: #f4f4f4; /* Light color for readability */
+    text-align: center; /* Center the content */
+    padding: 1.5rem 0; /* Add vertical spacing */
+    font-size: 0.9rem; /* Slightly smaller font size */
+    border-top: 2px solid #e6e6e6; /* Subtle border for separation */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+    font-family: 'Arial', sans-serif; /* Clean, professional font */
+}
+
+footer a {
+    color: #ff7f50; /* Coral color for links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Highlight links */
+}
+
+footer a:hover {
+    color: #ff6347; /* Slightly darker coral on hover */
+    text-decoration: underline; /* Add underline on hover */
+}
